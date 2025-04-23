@@ -10,6 +10,9 @@ import { OrganisationModule } from './organisation/organisation.module';
 import { PassportModule } from '@nestjs/passport';
 import { JwtModule } from '@nestjs/jwt';
 import { ConsultationModule } from './consultation/consultation.module';
+import { OrganisationModule } from './organisation/organisation.module';
+import { PassportModule } from '@nestjs/passport';
+import { JwtModule } from '@nestjs/jwt';
 
 @Module({
   imports: [

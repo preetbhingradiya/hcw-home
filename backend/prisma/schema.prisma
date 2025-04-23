@@ -20,6 +20,8 @@ model User {
   role             Role          @default(Patient) // Enum: Patient, Practitioner, Admin
   organisationId   Int?
   organisation     Organisation? @relation(fields: [organisationId], references: [id])
+  organisationId   Int?
+  organisation     Organisation? @relation(fields: [organisationId], references: [id])
   firstName        String
   lastName         String
   password         String
@@ -113,6 +115,17 @@ model SMS_Providers {
   prefix     String
   isWhatsapp Boolean
   isDisabled Boolean
+}
+
+model Organisation {
+  id             Int      @id @default(autoincrement())
+  name           String
+  logo           String?
+  primaryColor   String?
+  footerMarkdown String?
+  users          User[]
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
 }
 
 model Organisation {

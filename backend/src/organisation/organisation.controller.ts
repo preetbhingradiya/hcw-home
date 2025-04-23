@@ -2,10 +2,10 @@ import { Controller, Post, Req, Body, UseGuards, } from '@nestjs/common';
 import { ApiOperation, ApiTags } from '@nestjs/swagger';
 import { CreateOrganisationDto } from './dto/create-organisation.dto';
 import { OrganisationService } from './organisation.service';
+import { Role } from 'constant/role-constant';
+import { Roles } from 'src/auth/decorators/role.decorator';
 import { JwtAuthGuard } from 'src/auth/guards/jwt.guards';
 import { RolesGuard } from 'src/auth/guards/roles.guards';
-import { Role } from 'src/constant/role.constant';
-import { Roles } from 'src/auth/decorator/role.decorator';
 
 @ApiTags('Organisation')
 @UseGuards(JwtAuthGuard, RolesGuard)
